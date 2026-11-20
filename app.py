@@ -1,7 +1,8 @@
- import streamlit as st
+import streamlit as st
 from google import genai
 from google.genai import types
-# --- BAUN ASİSTAN AYARLARI --- 
+
+# --- BAUN ASİSTAN AYARLARI ---
 BOT_ADI = "BAUN Asistan"
 BOT_ACIKLAMA = "Balıkesir Üniversitesi öğrencileri için yapay zekâ destekli asistan."
 BOT_KARAKTERI = """
@@ -24,7 +25,7 @@ yurtlar ve üniversite hizmetleri hakkında soruları yanıtlamaya çalış.
 - Kısa, anlaşılır ve doğal cevaplar ver. Gerektiğinde adım adım açıkla.
 """
 YARATICILIK = 0.3
-GEMINI_MODEL = "gemini-3.5-flash-lite"
+GEMINI_MODEL = "gemini-2.5-flash"
 # ----------------------------
 
 st.set_page_config(page_title=BOT_ADI, page_icon="🎓")
