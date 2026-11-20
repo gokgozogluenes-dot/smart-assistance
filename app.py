@@ -1,9 +1,7 @@
-
  import streamlit as st
 from google import genai
 from google.genai import types
-
-# --- BAUN ASİSTAN AYARLARI ---
+# --- BAUN ASİSTAN AYARLARI --- 
 BOT_ADI = "BAUN Asistan"
 BOT_ACIKLAMA = "Balıkesir Üniversitesi öğrencileri için yapay zekâ destekli asistan."
 BOT_KARAKTERI = """
