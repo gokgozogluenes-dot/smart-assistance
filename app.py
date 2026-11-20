@@ -26,7 +26,7 @@ yurtlar ve üniversite hizmetleri hakkında soruları yanıtlamaya çalış.
 - Kısa, anlaşılır ve doğal cevaplar ver. Gerektiğinde adım adım açıkla.
 """
 YARATICILIK = 0.3
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3.5-flash-lite"
 # ----------------------------
 
 st.set_page_config(page_title=BOT_ADI, page_icon="🎓")
