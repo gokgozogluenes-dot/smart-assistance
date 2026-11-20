@@ -41,7 +41,7 @@ if prompt := st.chat_input("Mesajını buraya yaz..."):
     with st.chat_message("assistant"):
         with st.spinner("Düşünüyor..."):
             response = client.models.generate_content(
-                model="gemini-2.0-flash",
+                model="gemini-3.8-flash",
                 contents=contents,
                 config=types.GenerateContentConfig(
                     system_instruction=BOT_KARAKTERI,
