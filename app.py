@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from google import genai
 from google.genai import types
@@ -32,11 +33,21 @@ st.set_page_config(page_title=BOT_ADI, page_icon="🎓")
 st.title(f"🎓 {BOT_ADI}")
 st.caption(BOT_ACIKLAMA)
 
-# API anahtarını Streamlit Secrets üzerinden al.
+# API anahtarını önce Streamlit Secrets, yoksa ortam değişkenlerinden al.
+api_key = None
 try:
-    api_key = st.secrets["GEMINI_API_KEY"]
+    api_key = st.secrets.get("GEMINI_API_KEY")
 except Exception:
-    st.error("GEMINI_API_KEY bulunamadı. Streamlit uygulamanın Secrets bölümüne API anahtarını ekle.")
+    api_key = None
+
+if not api_key:
+    api_key = os.getenv("GEMINI_API_KEY")
+
+if not api_key:
+    st.error(
+        "GEMINI_API_KEY bulunamadı. Streamlit Cloud uygulamanın "
+        "*Settings > Secrets* bölümüne GEMINI_API_KEY = \"anahtarın\" şeklinde ekle."
+    )
     st.stop()
 
 client = genai.Client(api_key=api_key)
